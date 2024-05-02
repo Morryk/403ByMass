@@ -6,7 +6,7 @@ Repository fork di https://github.com/iamj0ker/bypass-403
 
 # Usage
 <code>403ByMass.sh url path-file out-file</code><br>
-Il file delle path deve contenere 1 valore per rigo.
+Il file delle path deve contenere 1 valore per rigo.<br>
 L'out-file è opzionale, di default scrive su output.txt e su stdout.
 
 # Installation
