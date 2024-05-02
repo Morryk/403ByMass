@@ -1,6 +1,6 @@
 # 403ByMass
 
-Bypass massivo di codice HTTP 403
+Script per il bypass massivo di HTTP 403.
 
 Repository fork di https://github.com/iamj0ker/bypass-403
 
