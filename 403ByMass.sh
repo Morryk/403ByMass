@@ -90,6 +90,14 @@ do
 	echo "  --> ${url}/${path} -X TRACE"
 	curl -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "X-Forwarded-Host: 127.0.0.1" $url/$path
 	echo "  --> ${url}/${path} -H X-Forwarded-Host: 127.0.0.1"
+	curl -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "Referer: $path" $url/$path
+	echo "  --> ${url}/${path} -H Referer: $path"
+	curl -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "X-Originating-IP: 127.0.0.1" $url/$path
+	echo "  --> ${url}/${path} -H X-Originating-IP: 127.0.0.1"
+	curl -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "X-Forwarded-Server: $url" $url/$path
+	echo "  --> ${url}/${path} -H X-Forwarded-Server: $url"
+	curl -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "X-HTTP-Host-Override: $url" $url/$path
+	echo "  --> ${url}/${path} -H X-HTTP-Host-Override: $url"
 	echo "***************************************************************************************"
 	echo ""
 	echo ""
