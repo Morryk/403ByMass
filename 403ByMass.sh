@@ -35,6 +35,7 @@ fi
 
 filePayload="./payload-custom-header"
 
+while IFS= read -r path;
 do
 
 	echo "Test bypass: $path"
@@ -77,9 +78,8 @@ do
 	echo "  --> ${url}/${path} -X TRACE"
 	curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" -H "Content-Length:0" -X POST $url/$path
 	echo "  --> ${url}/${path} -H Content-Length:0 -X POST"
-	while IFS= read -r riga; do
-		payload="riga"
-		curl -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $payload $url/$path
+	while IFS= read -r payload; do
+		curl -k -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $url/$path $payload
 		echo "  --> ${url}/${path} $payload"
 	done < $filePayload
 	echo "***************************************************************************************"
