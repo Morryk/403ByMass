@@ -1,6 +1,7 @@
 # 403ByMass
 
 Script per il bypass massivo di HTTP 403.
+Vengono eseguite 61 test per singolo url + path
 
 Repository fork di https://github.com/iamj0ker/bypass-403
 
